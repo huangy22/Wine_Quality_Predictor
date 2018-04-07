@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0' name='viewport'>
+
+  <title>Interactive Visualizations on the Wine datasets</title>
+  <link rel="stylesheet" type="text/css" href="./css/dc.css"/>
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="./css/colorbrewer.css" media="screen, print"/>
+    
+  <script type="text/javascript" src="./js/d3.js" charset="utf-8"></script>
+  <script type="text/javascript" src="./js/crossfilter.js"></script>
+  <script type="text/javascript" src="./js/dc.js"></script>
+  <script type="text/javascript" src="./js/jquery.js"></script>
+  <script type="text/javascript" src="./js/bootstrap.js"></script>
+  <script type="text/javascript" src="./js/colorbrewer.v1.min.js"></script>
+
+  <style type="text/css">
+    a.button {
+    appearance: button;
+    text-decoration: none;
+    color: initial;
+    }
+
+    span {
+    display:table;
+    margin:0 auto;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class='container' id='main-container'>
+<div class='content'>
+<div class='container' style='font: 12px sans-serif;'>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Dataset</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="javascript:plot('wine');hide('facebook-charts');">Wine</a></li>
+    </ul>
+  </div>
+</nav>
+
+  <div id="generic-charts" class='row'>
+    <div class='col-md-7' id='dc-bubble-chart'>
+    	<div id="title-bubble"></div>
+      <p>x Axis:
+      <select id="selectX">
+        <option>Select X axis</option>
+      </select>
+      <a  align="right" href="javascript:resetAll();" class="btn btn-default" > reset all</a>
+      </p>
+    	<p>y Axis:
+    	<select id="selectY">
+    	  <option>Select Y axis</option>
+    	</select>
+      </p>
+      <div id="bubble-chart"></div>
+    </div>
+
+    <div class='col-md-5' id='dc-small-charts'>
+      <div class='row'>
+        <div id="title-pie"></div>
+        color:
+        <select id="selectColor">
+          <option>Select Color</option>
+        </select>
+        <a  href="javascript:resetAll();" class="btn btn-default" > reset all</a>
+        <div id='pie-chart'></div>
+      </div>
+
+      <div class='row'>
+        <div id="title-bar"></div>
+        x Axis:
+        <select id="selectBar">
+          <option>Select X axis</option>
+        </select>
+        <a  href="javascript:resetAll();" class="btn btn-default" > reset all</a>
+        <div id='bar-chart'></div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="footer" class='row'>
+    <h5>Generated with 
+      <a href="http://nickqizhu.github.io/dc.js/">dc.js</a>,
+      <a href="http://square.github.io/crossfilter/">crossfilter</a>, 
+      <a href="http://d3js.org/">d3.js</a> and 
+      <a href="http://twitter.github.io/bootstrap/">bootstrap</a>.
+    </h5>
+
+    <p>The wine dataset is public available for research. The details are described in [Cortez et al., 2009]. </p>
+
+    <p>[Cortez et al., 2009] P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis. 
+          Modeling wine preferences by data mining from physicochemical properties.
+    In Decision Support Systems, Elsevier, 47(4):547-553. ISSN: 0167-9236.
+    Available at: <a href="http://dx.doi.org/10.1016/j.dss.2009.05.016"> [Elsevier] </a>
+    <a href="http://www3.dsi.uminho.pt/pcortez/winequality09.pdf"> [Pre-press (pdf)] </a>
+    <a href="http://www3.dsi.uminho.pt/pcortez/dss09.bib"> [bib]</a>
+    
+    </p>
+  </div>
+
+</div>
+</div>
+  
+<script type="text/javascript" src="plot.js"></script>
+
+  
+</body>
+</html>
